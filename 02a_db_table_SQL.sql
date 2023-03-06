@@ -7,6 +7,7 @@
 /* Datenbanken auf Server anzeigen */
 #SHOW DATABASES;
 
+# DB löschen falls existent
 DROP DATABASE IF EXISTS boo;
 
 # DB boo anlegen, falls noch nicht vorhanden
@@ -54,4 +55,20 @@ INSERT INTO coworkers(firstName,location,age,computer)VALUES("Sohrab","bed",26,"
 
 SELECT * FROM coworkers;
 
+# Inhalte filtern 
+
 SELECT * FROM coworkers WHERE location= "pool";
+
+#Inhalte sortieren
+
+SELECT firstName AS "Name",location AS "Ort", age AS "Alter" FROM coworkers
+#WHERE age > 35     ASC = ordnet von klein nach groß
+#ORDER BY age ASC
+
+# ordnet nach groß nach klein
+ORDER BY age DESC
+#limietiert die Datensätze, die angezeigt werden
+LIMIT 1
+;
+
+
